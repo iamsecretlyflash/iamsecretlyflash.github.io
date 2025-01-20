@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Vaibhav Seth</title>
+    <link>https://iamsecretlyflash.github.io/blog/</link>
+    <description>Recent content in Blog on Vaibhav Seth</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 19 Jan 2025 18:13:33 +0530</lastBuildDate>
+    <atom:link href="https://iamsecretlyflash.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up a webpage like this</title>
+      <link>https://iamsecretlyflash.github.io/blog/guide/</link>
+      <pubDate>Sun, 19 Jan 2025 18:13:33 +0530</pubDate>
+      <guid>https://iamsecretlyflash.github.io/blog/guide/</guid>
+      <description>&lt;h2 id=&#34;just-why&#34;&gt;Just Why?&lt;/h2&gt;&#xA;&lt;p&gt;The first thing that needs to be addressed is why I decided to make this website. Why did I spend the whole of 19th January 2025 figuring out how to host this goddamn webpage?&lt;/p&gt;&#xA;&lt;p&gt;The reason is threefold:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;I have lately realized I love to yap, have tons of thoughts, and would love a place to pen (type) them down (hence the blog).&lt;/li&gt;&#xA;&lt;li&gt;I have always been somewhat obsessed with the idea of having a domain name for myself. I splurged a bit today and hence had to add content to the page with my name—what better than random thoughts?&lt;/li&gt;&#xA;&lt;li&gt;I have to thank Aniruddha Deb for the idea of hosting a blog page using Hugo. I have always enjoyed reading his blogs and was inspired by him to create something similar.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;You will see that the theme of this page is inspired by &lt;a href=&#34;https://www.aniruddhadeb.com&#34;&gt;Aniruddha&amp;rsquo;s page&lt;/a&gt; because I found Hugo through his blog and used some style elements from his GitHub repository.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
