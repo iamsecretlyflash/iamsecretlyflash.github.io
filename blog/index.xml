@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Blog on Vaibhav Seth</title>
-    <link>http://localhost:1313/blog/</link>
+    <link>https://iamsecretlyflash.github.io/blog/</link>
     <description>Recent content in Blog on Vaibhav Seth</description>
     <generator>Hugo -- 0.141.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 19 Jan 2025 18:13:33 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://iamsecretlyflash.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What exactly is universal approximation about?</title>
-      <link>http://localhost:1313/blog/basic_nns/tba/</link>
+      <link>https://iamsecretlyflash.github.io/blog/basic_nns/tba/</link>
       <pubDate>Sun, 19 Jan 2025 18:13:33 +0530</pubDate>
-      <guid>http://localhost:1313/blog/basic_nns/tba/</guid>
+      <guid>https://iamsecretlyflash.github.io/blog/basic_nns/tba/</guid>
       <description>&lt;p&gt;If you have read of neural networks, there&amp;rsquo;s some chance you must have heard of the universal approximation theorem. The key principle that
 makes these machines so powerful.&lt;/p&gt;
 &lt;h3 id=&#34;universal-approximation-theorem&#34;&gt;Universal Approximation Theorem&lt;/h3&gt;
@@ -22,9 +22,9 @@ The Universal Approximation Theorem states that a feedforward neural network wit
     </item>
     <item>
       <title>Setting up a webpage like this</title>
-      <link>http://localhost:1313/blog/guide/</link>
+      <link>https://iamsecretlyflash.github.io/blog/guide/</link>
       <pubDate>Sat, 18 Jan 2025 18:13:33 +0530</pubDate>
-      <guid>http://localhost:1313/blog/guide/</guid>
+      <guid>https://iamsecretlyflash.github.io/blog/guide/</guid>
       <description>&lt;h2 id=&#34;just-why&#34;&gt;Just Why?&lt;/h2&gt;
 &lt;p&gt;The first thing that needs to be addressed is why I decided to make this website. Why did I spend the whole of 19th January 2025 figuring out how to host this goddamn webpage?&lt;/p&gt;
 &lt;p&gt;The reason is threefold:&lt;/p&gt;

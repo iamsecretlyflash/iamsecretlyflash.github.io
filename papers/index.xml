@@ -13,10 +13,8 @@
       <link>https://iamsecretlyflash.github.io/papers/paper1/</link>
       <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
       <guid>https://iamsecretlyflash.github.io/papers/paper1/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Vaibhav Seth, Ayan Sengupta, Arinjay Pathak, Natraj Raman, Sriram Gopalakrishnan, Tanmoy Chakraborty
-&lt;strong&gt;Abstract:&lt;/strong&gt; Fine-tuning Large Language Models (LLMs) is resource-intensive due to their size. While low-rank adaptation is a common parameter-efficient fine-tuning approach, it is sensitive to hyperparameter choices, leading to instability. This paper introduces MonteCLoRA, a fine-tuning method that uses Monte Carlo estimation to achieve unbiased posterior estimation of low-rank parameters with low variance. MonteCLoRA improves stability and performance with minimal additional parameters (O(1)).
-&lt;strong&gt;Under Review:&lt;/strong&gt; Journal of Machine Learning Research (JMLR), 2025
-&lt;a href=&#34;https://arxiv.org/html/2411.04358v1&#34;&gt;Read the paper here&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Vaibhav Seth, Ayan Sengupta, Arinjay Pathak, Natraj Raman, Sriram Gopalakrishnan, Tanmoy Chakraborty&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Fine-tuning Large Language Models (LLMs) is resource-intensive due to their size. While low-rank adaptation is a common parameter-efficient fine-tuning approach, it is sensitive to hyperparameter choices, leading to instability. This paper introduces MonteCLoRA, a fine-tuning method that uses Monte Carlo estimation to achieve unbiased posterior estimation of low-rank parameters with low variance. MonteCLoRA improves stability and performance with minimal additional parameters (O(1)).&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

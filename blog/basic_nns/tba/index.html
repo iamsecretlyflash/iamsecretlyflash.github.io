@@ -130,8 +130,8 @@ The Universal Approximation Theorem states that a feedforward neural network wit
   "keywords": [
     
   ],
-  "articleBody": "If you have read of neural networks, there’s some chance you must have heard of the universal approximation theorem. The key principle that makes these machines so powerful.\nUniversal Approximation Theorem The Universal Approximation Theorem states that a feedforward neural network with a single hidden layer containing a finite number of neurons can approximate any continuous function on a compact subset of \\(\\mathbb{R}^n\\), provided the activation function is non-constant, bounded, and continuous. Formally: Let \\(K \\subset \\mathbb{R}^n\\) be a compact set and \\( f: K \\to \\mathbb{R} \\) be a continuous function. For any \\( \\epsilon \u003e 0 \\), there exists a feedforward neural network \\( g(x) \\) of the form: $$ g(x) = \\sum_{i=1}^m c_i \\sigma(w_i^\\top x + b_i), $$ where:\n- \\( \\sigma: \\mathbb{R} \\to \\mathbb{R} \\) is the activation function, - \\( m \\) is the number of neurons in the hidden layer, - \\( c_i \\in \\mathbb{R} \\), \\( w_i \\in \\mathbb{R}^n \\), and \\( b_i \\in \\mathbb{R} \\) are parameters of the network, such that: $$ \\sup_{x \\in K} |f(x) - g(x)| \u003c \\epsilon. $$\nThis demonstrates that the network \\( g(x) \\) can approximate \\( f(x) \\) to arbitrary precision, given sufficient neurons in the hidden layer. Uhhhhh WHAT? To understand what the above theorem means, we will consider a simple neural network with a simple activation and assume that we are trying to approximate a one dimensional function.\nWe will get some definitions sorted first.\nLet's call the function to be approximated as \\( f(x) : \\mathbb{R} \\to \\mathbb{R} \\) and the approximating function as \\( \\hat{f}(x) : \\mathbb{R} \\to \\mathbb{R} \\) Activation Function: Basically any non-linear function that transformrs the input. Some most common ones are with there graphs are:\n- Rectified Linear Unit (ReLU) : \\( max(x, 0) \\) - Sigmoid : \\( \\frac{1}{1 + \\exp(-x)} \\) ",
-  "wordCount" : "306",
+  "articleBody": "If you have read of neural networks, there’s some chance you must have heard of the universal approximation theorem. The key principle that makes these machines so powerful.\nUniversal Approximation Theorem The Universal Approximation Theorem states that a feedforward neural network with a single hidden layer containing a finite number of neurons can approximate any continuous function on a compact subset of \\(\\mathbb{R}^n\\), provided the activation function is non-constant, bounded, and continuous. Formally: Let \\(K \\subset \\mathbb{R}^n\\) be a compact set and \\( f: K \\to \\mathbb{R} \\) be a continuous function. For any \\( \\epsilon \u003e 0 \\), there exists a feedforward neural network \\( g(x) \\) of the form: $$ g(x) = \\sum_{i=1}^m c_i * a(w_i^\\top x + b_i), $$ where:\n- \\( a: \\mathbb{R} \\to \\mathbb{R} \\) is the activation function, - \\( m \\) is the number of neurons in the hidden layer, - \\( c_i \\in \\mathbb{R} \\), \\( w_i \\in \\mathbb{R}^n \\), and \\( b_i \\in \\mathbb{R} \\) are parameters of the network, such that: $$ \\sup_{x \\in K} |f(x) - g(x)| \u003c \\epsilon. $$\nThis demonstrates that the network \\( g(x) \\) can approximate \\( f(x) \\) to arbitrary precision, given sufficient neurons in the hidden layer. Uhhhhh WHAT? To understand what the above theorem means, we will consider a simple neural network with a simple activation and assume that we are trying to approximate a one dimensional function.\nWe will get some definitions sorted first.\nLet's call the function to be approximated as \\( f(x) : \\mathbb{R} \\to \\mathbb{R} \\) and the approximating function as \\( \\hat{f}(x) : \\mathbb{R} \\to \\mathbb{R} \\) Activation Function Basically any non-linear function that transformrs the input. Some most common ones are with there graphs are:\n- Rectified Linear Unit (ReLU) : \\( max(x, 0) \\) - Sigmoid : \\( \\frac{1}{1 + \\exp(-x)} \\) ",
+  "wordCount" : "307",
   "inLanguage": "en",
   "datePublished": "2025-01-19T18:13:33+05:30",
   "dateModified": "2025-01-19T18:13:33+05:30",
@@ -227,11 +227,11 @@ Formally:
 Let \(K \subset \mathbb{R}^n\) be a compact set and \( f: K \to \mathbb{R} \) be a continuous function. For any \( \epsilon > 0 \), there exists a feedforward neural network \( g(x) \) of the form:
 </p>
 $$
-g(x) = \sum_{i=1}^m c_i \sigma(w_i^\top x + b_i),
+g(x) = \sum_{i=1}^m c_i * a(w_i^\top x + b_i),
 $$
 <p>where:</p>
 <p>
-- \( \sigma: \mathbb{R} \to \mathbb{R} \) is the activation function,
+- \( a: \mathbb{R} \to \mathbb{R} \) is the activation function,
 </p>
 <p>
 - \( m \) is the number of neurons in the hidden layer,
@@ -252,7 +252,8 @@ This demonstrates that the network \( g(x) \) can approximate \( f(x) \) to arbi
 <p>
 Let's call the function to be approximated as \( f(x) : \mathbb{R} \to \mathbb{R} \) and the approximating function as \( \hat{f}(x) : \mathbb{R} \to \mathbb{R} \)
 </p>
-<p>Activation Function: Basically any non-linear function that transformrs the input. Some most common ones are with there graphs are:</p>
+<h3 id="activation-function">Activation Function<a hidden class="anchor" aria-hidden="true" href="#activation-function">#</a></h3>
+<p>Basically any non-linear function that transformrs the input. Some most common ones are with there graphs are:</p>
 <p>
 - Rectified Linear Unit (ReLU) : \( max(x, 0) \)
 </p>
