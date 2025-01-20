@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Welcome on Vaibhav Seth</title>
     <link>https://iamsecretlyflash.github.io/</link>
     <description>Recent content in Welcome on Vaibhav Seth</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.141.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 19 Jan 2025 18:13:33 +0530</lastBuildDate>
     <atom:link href="https://iamsecretlyflash.github.io/index.xml" rel="self" type="application/rss+xml" />
@@ -13,14 +13,25 @@
       <link>https://iamsecretlyflash.github.io/blog/guide/</link>
       <pubDate>Sun, 19 Jan 2025 18:13:33 +0530</pubDate>
       <guid>https://iamsecretlyflash.github.io/blog/guide/</guid>
-      <description>&lt;h2 id=&#34;just-why&#34;&gt;Just Why?&lt;/h2&gt;&#xA;&lt;p&gt;The first thing that needs to be addressed is why I decided to make this website. Why did I spend the whole of 19th January 2025 figuring out how to host this goddamn webpage?&lt;/p&gt;&#xA;&lt;p&gt;The reason is threefold:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;I have lately realized I love to yap, have tons of thoughts, and would love a place to pen (type) them down (hence the blog).&lt;/li&gt;&#xA;&lt;li&gt;I have always been somewhat obsessed with the idea of having a domain name for myself. I splurged a bit today and hence had to add content to the page with my name—what better than random thoughts?&lt;/li&gt;&#xA;&lt;li&gt;I have to thank Aniruddha Deb for the idea of hosting a blog page using Hugo. I have always enjoyed reading his blogs and was inspired by him to create something similar.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;You will see that the theme of this page is inspired by &lt;a href=&#34;https://www.aniruddhadeb.com&#34;&gt;Aniruddha&amp;rsquo;s page&lt;/a&gt; because I found Hugo through his blog and used some style elements from his GitHub repository.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;just-why&#34;&gt;Just Why?&lt;/h2&gt;
+&lt;p&gt;The first thing that needs to be addressed is why I decided to make this website. Why did I spend the whole of 19th January 2025 figuring out how to host this goddamn webpage?&lt;/p&gt;
+&lt;p&gt;The reason is threefold:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I have lately realized I love to yap, have tons of thoughts, and would love a place to pen (type) them down (hence the blog).&lt;/li&gt;
+&lt;li&gt;I have always been somewhat obsessed with the idea of having a domain name for myself. I splurged a bit today and hence had to add content to the page with my name—what better than random thoughts?&lt;/li&gt;
+&lt;li&gt;I have to thank Aniruddha Deb for the idea of hosting a blog page using Hugo. I have always enjoyed reading his blogs and was inspired by him to create something similar.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You will see that the theme of this page is inspired by &lt;a href=&#34;https://www.aniruddhadeb.com&#34;&gt;Aniruddha&amp;rsquo;s page&lt;/a&gt; because I found Hugo through his blog and used some style elements from his GitHub repository.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Robust and Efficient Fine-tuning of LLMs with Bayesian Reparameterization of Low-Rank Adaptation</title>
       <link>https://iamsecretlyflash.github.io/papers/paper1/</link>
       <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
       <guid>https://iamsecretlyflash.github.io/papers/paper1/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Vaibhav Seth, Ayan Sengupta, Arinjay Pathak, Natraj Raman, Sriram Gopalakrishnan, Tanmoy Chakraborty&#xA;&lt;strong&gt;Abstract:&lt;/strong&gt; Fine-tuning Large Language Models (LLMs) is resource-intensive due to their size. While low-rank adaptation is a common parameter-efficient fine-tuning approach, it is sensitive to hyperparameter choices, leading to instability. This paper introduces MonteCLoRA, a fine-tuning method that uses Monte Carlo estimation to achieve unbiased posterior estimation of low-rank parameters with low variance. MonteCLoRA improves stability and performance with minimal additional parameters (O(1)).&#xA;&lt;strong&gt;Under Review:&lt;/strong&gt; Journal of Machine Learning Research (JMLR), 2025&#xA;&lt;a href=&#34;https://arxiv.org/html/2411.04358v1&#34;&gt;Read the paper here&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Vaibhav Seth, Ayan Sengupta, Arinjay Pathak, Natraj Raman, Sriram Gopalakrishnan, Tanmoy Chakraborty
+&lt;strong&gt;Abstract:&lt;/strong&gt; Fine-tuning Large Language Models (LLMs) is resource-intensive due to their size. While low-rank adaptation is a common parameter-efficient fine-tuning approach, it is sensitive to hyperparameter choices, leading to instability. This paper introduces MonteCLoRA, a fine-tuning method that uses Monte Carlo estimation to achieve unbiased posterior estimation of low-rank parameters with low variance. MonteCLoRA improves stability and performance with minimal additional parameters (O(1)).
+&lt;strong&gt;Under Review:&lt;/strong&gt; Journal of Machine Learning Research (JMLR), 2025
+&lt;a href=&#34;https://arxiv.org/html/2411.04358v1&#34;&gt;Read the paper here&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
