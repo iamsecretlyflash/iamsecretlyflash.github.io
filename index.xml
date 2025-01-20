@@ -24,6 +24,18 @@
 &lt;p&gt;You will see that the theme of this page is inspired by &lt;a href=&#34;https://www.aniruddhadeb.com&#34;&gt;Aniruddha&amp;rsquo;s page&lt;/a&gt; because I found Hugo through his blog and used some style elements from his GitHub repository.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>What exactly is universal approximation about?</title>
+      <link>https://iamsecretlyflash.github.io/blog/basic_nns/tba/</link>
+      <pubDate>Sun, 19 Jan 2025 18:13:33 +0530</pubDate>
+      <guid>https://iamsecretlyflash.github.io/blog/basic_nns/tba/</guid>
+      <description>&lt;p&gt;If you have read of neural networks, there&amp;rsquo;s some chance you must have heard of the universal approximation theorem. The key principle that
+makes these machines so powerful.&lt;/p&gt;
+&lt;h3 id=&#34;universal-approximation-theorem&#34;&gt;Universal Approximation Theorem&lt;/h3&gt;
+&lt;p&gt;
+The Universal Approximation Theorem states that a feedforward neural network with a single hidden layer containing a finite number of neurons can approximate any continuous function on a compact subset of \(\mathbb{R}^n\), provided the activation function is non-constant, bounded, and continuous.
+&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Robust and Efficient Fine-tuning of LLMs with Bayesian Reparameterization of Low-Rank Adaptation</title>
       <link>https://iamsecretlyflash.github.io/papers/paper1/</link>
       <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
