@@ -10,9 +10,9 @@
     <atom:link href="https://iamsecretlyflash.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What exactly is universal approximation about?</title>
-      <link>https://iamsecretlyflash.github.io/blog/basic_nns/tba/</link>
+      <link>https://iamsecretlyflash.github.io/blog/universalapprox/article/</link>
       <pubDate>Sun, 19 Jan 2025 18:13:33 +0530</pubDate>
-      <guid>https://iamsecretlyflash.github.io/blog/basic_nns/tba/</guid>
+      <guid>https://iamsecretlyflash.github.io/blog/universalapprox/article/</guid>
       <description>&lt;p&gt;If you have read of neural networks, there&amp;rsquo;s some chance you must have heard of the universal approximation theorem. The key principle that
 makes these machines so powerful.&lt;/p&gt;
 &lt;h3 id=&#34;universal-approximation-theorem&#34;&gt;Universal Approximation Theorem&lt;/h3&gt;

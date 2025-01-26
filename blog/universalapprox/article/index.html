@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>What exactly is universal approximation about? | Vaibhav Seth</title>
+<meta name="keywords" content="">
+<meta name="description" content="If you have read of neural networks, there&rsquo;s some chance you must have heard of the universal approximation theorem. The key principle that
+makes these machines so powerful.
+Universal Approximation Theorem
+
+The Universal Approximation Theorem states that a feedforward neural network with a single hidden layer containing a finite number of neurons can approximate any continuous function on a compact subset of \(\mathbb{R}^n\), provided the activation function is non-constant, bounded, and continuous.
+">
+<meta name="author" content="">
+<link rel="canonical" href="https://iamsecretlyflash.github.io/blog/universalapprox/article/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://iamsecretlyflash.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://iamsecretlyflash.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://iamsecretlyflash.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://iamsecretlyflash.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://iamsecretlyflash.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://iamsecretlyflash.github.io/blog/universalapprox/article/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript> <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
+  integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
+  integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+ 
+<meta property="og:url" content="https://iamsecretlyflash.github.io/blog/universalapprox/article/">
+  <meta property="og:site_name" content="Vaibhav Seth">
+  <meta property="og:title" content="What exactly is universal approximation about?">
+  <meta property="og:description" content="If you have read of neural networks, there’s some chance you must have heard of the universal approximation theorem. The key principle that makes these machines so powerful.
+Universal Approximation Theorem The Universal Approximation Theorem states that a feedforward neural network with a single hidden layer containing a finite number of neurons can approximate any continuous function on a compact subset of \(\mathbb{R}^n\), provided the activation function is non-constant, bounded, and continuous. ">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-01-19T18:13:33+05:30">
+    <meta property="article:modified_time" content="2025-01-19T18:13:33+05:30">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="What exactly is universal approximation about?">
+<meta name="twitter:description" content="If you have read of neural networks, there&rsquo;s some chance you must have heard of the universal approximation theorem. The key principle that
+makes these machines so powerful.
+Universal Approximation Theorem
+
+The Universal Approximation Theorem states that a feedforward neural network with a single hidden layer containing a finite number of neurons can approximate any continuous function on a compact subset of \(\mathbb{R}^n\), provided the activation function is non-constant, bounded, and continuous.
+">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blog",
+      "item": "https://iamsecretlyflash.github.io/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "What exactly is universal approximation about?",
+      "item": "https://iamsecretlyflash.github.io/blog/universalapprox/article/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "What exactly is universal approximation about?",
+  "name": "What exactly is universal approximation about?",
+  "description": "If you have read of neural networks, there\u0026rsquo;s some chance you must have heard of the universal approximation theorem. The key principle that makes these machines so powerful.\nUniversal Approximation Theorem The Universal Approximation Theorem states that a feedforward neural network with a single hidden layer containing a finite number of neurons can approximate any continuous function on a compact subset of \\(\\mathbb{R}^n\\), provided the activation function is non-constant, bounded, and continuous. ",
+  "keywords": [
+    
+  ],
+  "articleBody": "If you have read of neural networks, there’s some chance you must have heard of the universal approximation theorem. The key principle that makes these machines so powerful.\nUniversal Approximation Theorem The Universal Approximation Theorem states that a feedforward neural network with a single hidden layer containing a finite number of neurons can approximate any continuous function on a compact subset of \\(\\mathbb{R}^n\\), provided the activation function is non-constant, bounded, and continuous. Formally: Let \\(K \\subset \\mathbb{R}\\) be a compact set and \\( f: K \\to \\mathbb{R} \\) be a continuous function. For any \\( \\epsilon \u003e 0 \\), there exists a feedforward neural network \\( g(x) \\) of the form: $$ g(x) = \\sum_{i=1}^m c_i * a(w_i^\\top x + b_i), $$ where:\n- \\( a: \\mathbb{R} \\to \\mathbb{R} \\) is the activation function, - \\( m \\) is the number of neurons in the hidden layer, - \\( c_i \\in \\mathbb{R} \\), \\( w_i \\in \\mathbb{R} \\), and \\( b_i \\in \\mathbb{R} \\) are parameters of the network, such that: $$ \\sup_{x \\in K} |f(x) - g(x)| \u003c \\epsilon. $$\nThis demonstrates that the network \\( g(x) \\) can approximate \\( f(x) \\) to arbitrary precision, given sufficient neurons in the hidden layer. Uhhhhh WHAT? To understand what the above theorem means, we will consider a simple neural network with a simple activation and assume that we are trying to approximate a one dimensional function.\nBut before anything, we will get some definitions sorted first. 1. Approximation function Let's call the function to be approximated as \\( f(x) : \\mathbb{R} \\to \\mathbb{R} \\) and the approximating function as \\( \\hat{f}(x) : \\mathbb{R} \\to \\mathbb{R} \\) 2. Activation Function Basically any non-linear function that transforms the input. Some most common ones are with there graphs are:\n- Rectified Linear Unit (ReLU) : \\( max(x, 0) \\) - Sigmoid : \\( \\frac{1}{1 + \\exp(-x)} \\) 3. Neural Network Basically a summation of functions over and over again.\nThe neural network described in the image works as follows:\nTakes a single input x and sends it to the three nodes.\nEach of those node first map this input to a diffent space using a linear function of the form a*x + b\nAt each node a non-linear activation function is applied to the mapped input and passed to the next layer.\nIn the above diagram the next layer just takes a summation of the outputs of all the three nodes and that is the output of the neural network. When relevant parameters are learnt , that is the approximated function\nA slightly more complicated neural network is described below\nIn this network the hidden units are again perform the same steps as above but this time the linear function has two input parameters. We can extend this format for any dimension of input\nTo sort of complete things here is another type of a neural network\nWhat you see above is a multiple layer network. You can think of this recursively, the outputs from the first layer (f_i) become the inputs to the second layer. This recursive definition can be used to define any neural network of aribtrary depth.\nYou might have heard multiple layer neural networks performing excpetionally powerfully but in theory we can approximate any function using just a single hidden layer.\n4. Piecewise Linear Functions The final piece that we will require in this demo is the concept of piecewise linear function. Let’s look at some graphs to understand them\nThe above function is a basic ReLU function. As you can see, in the two regions where it’s differentiable the function is linear. This is called piecewise linearity.\nThis one has three linear regions.\nThis one has 4 linear regions. All the graphs have been made by summing different ReLU functions. So you can see that adding ReLU basically gives a piecewise linear function.\nWith these basic definitions, let’s look at the universal approximation theorem.\nUniversal Approximation - A Visualisation In this visualisation of the theorem, we will be approximating a very basic quadratic function (just x squared) using a single hidden layer neural network and the activation we will be using here will be ReLU. We will be varying the number of hidden units and will look at the results of the approximation. The learning of the weights will be performed using the backpropagation algorithm and the visualisation will be done using matplotlib.\nIf N is the number of hidden units the form of the approximation by a single hidden layer network can be written as:\n$$ \\hat{f}(x) = \\sum_{i=1}^N c_i * ReLU(a_i * x + b_i) $$\nWhere \\(a_i, b_i\\) and \\(c_i\\) are constants that will be learnt by the backpropagation algorithm by minimising a certain loss function. We will not be going into backpropgation algorithm in this blog so we will just assume that the weights returned by backprop are optimal.\nSumming ReLUs The first thing we will try here is to show how summing up ReLUs can potentially approximate a quadratic curve.\nIn the above figure we have plotted \\(y = x^2\\) and \\(ReLU(x)\\). As you can observe the approximation is pretty terrible here and there are just two points where our approximation functions hits the quadratic curve. However, this serves as a good starting point for us to get into how we can approximate functions using universal approximation theorem. Next, we will add one more ReLU function and we will do it a little smartly. We will add it in such a way that the resulting piecewise continuous function comes closer to the right side of the quadratic curve.\nIn the above graph we have added ReLU(x - 1). The idea behind this was that the slope at x = 1 is 2 and we want to ensure that the curve does not\n",
+  "wordCount" : "969",
+  "inLanguage": "en",
+  "datePublished": "2025-01-19T18:13:33+05:30",
+  "dateModified": "2025-01-19T18:13:33+05:30",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://iamsecretlyflash.github.io/blog/universalapprox/article/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Vaibhav Seth",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://iamsecretlyflash.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://iamsecretlyflash.github.io/" accesskey="h" title="Vaibhav Seth (Alt + H)">Vaibhav Seth</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://iamsecretlyflash.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://iamsecretlyflash.github.io/papers/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      What exactly is universal approximation about?
+    </h1>
+    <div class="post-meta"><span title='2025-01-19 18:13:33 +0530 IST'>2025-01-19 18:13</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>If you have read of neural networks, there&rsquo;s some chance you must have heard of the universal approximation theorem. The key principle that
+makes these machines so powerful.</p>
+<h3 id="universal-approximation-theorem">Universal Approximation Theorem<a hidden class="anchor" aria-hidden="true" href="#universal-approximation-theorem">#</a></h3>
+<p>
+The Universal Approximation Theorem states that a feedforward neural network with a single hidden layer containing a finite number of neurons can approximate any continuous function on a compact subset of \(\mathbb{R}^n\), provided the activation function is non-constant, bounded, and continuous.
+</p>
+Formally:
+<p>
+Let \(K \subset \mathbb{R}\) be a compact set and \( f: K \to \mathbb{R} \) be a continuous function. For any \( \epsilon > 0 \), there exists a feedforward neural network \( g(x) \) of the form:
+</p>
+$$
+g(x) = \sum_{i=1}^m c_i * a(w_i^\top x + b_i),
+$$
+<p>where:</p>
+<p>
+- \( a: \mathbb{R} \to \mathbb{R} \) is the activation function,
+</p>
+<p>
+- \( m \) is the number of neurons in the hidden layer,
+</p>
+<p>
+- \( c_i \in \mathbb{R} \), \( w_i \in \mathbb{R} \), and \( b_i \in \mathbb{R} \) are parameters of the network,
+</p>
+such that:
+<p>$$
+\sup_{x \in K} |f(x) - g(x)| &lt; \epsilon.
+$$</p>
+<p>
+This demonstrates that the network \( g(x) \) can approximate \( f(x) \) to arbitrary precision, given sufficient neurons in the hidden layer.
+</p>
+<h2 id="uhhhhh-what">Uhhhhh WHAT?<a hidden class="anchor" aria-hidden="true" href="#uhhhhh-what">#</a></h2>
+<p>To understand what the above theorem means, we will consider a simple neural network with a simple activation and assume that we are trying to approximate a one dimensional function.</p>
+<h3 id="but-before-anything-we-will-get-some-definitions-sorted-first">But before anything, we will get some definitions sorted first.<a hidden class="anchor" aria-hidden="true" href="#but-before-anything-we-will-get-some-definitions-sorted-first">#</a></h3>
+<h3 id="1-approximation-function">1. Approximation function<a hidden class="anchor" aria-hidden="true" href="#1-approximation-function">#</a></h3>
+<p>
+Let's call the function to be approximated as \( f(x) : \mathbb{R} \to \mathbb{R} \) and the approximating function as \( \hat{f}(x) : \mathbb{R} \to \mathbb{R} \)
+</p>
+<h3 id="2-activation-function">2. Activation Function<a hidden class="anchor" aria-hidden="true" href="#2-activation-function">#</a></h3>
+<p>Basically any non-linear function that transforms the input. Some most common ones are with there graphs are:</p>
+<p>
+- Rectified Linear Unit (ReLU) : \( max(x, 0) \)
+</p>
+<p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/relu.png"></p>
+<p>
+- Sigmoid : \( \frac{1}{1 + \exp(-x)} \)
+</p>
+<p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/sigmoid.png"></p>
+<h3 id="3-neural-network">3. Neural Network<a hidden class="anchor" aria-hidden="true" href="#3-neural-network">#</a></h3>
+<p>Basically a summation of functions over and over again.</p>
+<p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/basic_nn.png"></p>
+<p>The neural network described in the image works as follows:</p>
+<ul>
+<li>
+<p>Takes a single input x and sends it to the three nodes.</p>
+</li>
+<li>
+<p>Each of those node first map this input to a diffent space using a linear function of the form a*x + b</p>
+</li>
+<li>
+<p>At each node a non-linear activation function is applied to the mapped input and passed to the next layer.</p>
+</li>
+<li>
+<p>In the above diagram the next layer just takes a summation of the outputs of all the three nodes and that is the output of the neural network. When relevant parameters are learnt
+, that is the approximated function</p>
+</li>
+</ul>
+<p>A slightly more complicated neural network is described below</p>
+<p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/multivariate_nn.png"></p>
+<p>In this network the hidden units are again perform the same steps as above but this time the linear function has two input parameters. We can extend
+this format for any dimension of input</p>
+<p>To sort of complete things here is another type of a neural network</p>
+<p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/multi_layer_nn.png"></p>
+<p>What you see above is a multiple layer network. You can think of this recursively, the outputs from the first layer (f_i) become the inputs to the second layer. This recursive definition can be used to define any
+neural network of aribtrary depth.</p>
+<p>You might have heard multiple layer neural networks performing excpetionally powerfully but in theory we can approximate any function using just a single hidden layer.</p>
+<h3 id="4-piecewise-linear-functions">4. Piecewise Linear Functions<a hidden class="anchor" aria-hidden="true" href="#4-piecewise-linear-functions">#</a></h3>
+<p>The final piece that we will require in this demo is the concept of piecewise linear function. Let&rsquo;s look at some graphs to understand them</p>
+<p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/piecewise_1.png"></p>
+<p>The above function is a basic ReLU function. As you can see, in the two regions where it&rsquo;s differentiable the function is linear. This is called piecewise linearity.</p>
+<p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/piecewise_2.png"></p>
+<p>This one has three linear regions.</p>
+<p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/piecewise_3.png"></p>
+<p>This one has 4 linear regions. All the graphs have been made by summing different ReLU functions. So you can see that adding ReLU basically gives a piecewise linear function.</p>
+<p>With these basic definitions, let&rsquo;s look at the universal approximation theorem.</p>
+<h2 id="universal-approximation---a-visualisation">Universal Approximation - A Visualisation<a hidden class="anchor" aria-hidden="true" href="#universal-approximation---a-visualisation">#</a></h2>
+<p>In this visualisation of the theorem, we will be approximating a very basic quadratic function (just x squared) using a single hidden layer neural network and the activation we will be using
+here will be ReLU. We will be varying the number of hidden units and will look at the results of the approximation. The learning of the weights will
+be performed using the backpropagation algorithm and the visualisation will be done using matplotlib.</p>
+<p>If N is the number of hidden units the form of the approximation by a single hidden layer network can be written as:</p>
+<p>$$
+\hat{f}(x) = \sum_{i=1}^N c_i * ReLU(a_i * x + b_i)
+$$</p>
+<p>
+Where \(a_i, b_i\) and \(c_i\) are constants that will be learnt by the backpropagation algorithm by minimising a certain loss function.
+</p>
+<p>We will not be going into backpropgation algorithm in this blog so we will just assume that the weights returned by backprop are optimal.</p>
+<h3 id="summing-relus">Summing ReLUs<a hidden class="anchor" aria-hidden="true" href="#summing-relus">#</a></h3>
+<p>The first thing we will try here is to show how summing up ReLUs can potentially approximate a quadratic curve.</p>
+<p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/approx_quadratic_1.png"></p>
+<p>
+In the above figure we have plotted \(y = x^2\) and \(ReLU(x)\). As  you can observe the approximation is pretty terrible here and there are just two
+points where our approximation functions hits the quadratic curve. However, this serves as a good starting point for us to get into how we can approximate
+functions using universal approximation theorem.
+<p>Next, we will add one more ReLU function and we will do it a little smartly. We will add it in such a way
+that the resulting piecewise continuous function comes closer to the right side of the quadratic curve.</p>
+</p>
+<p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/approx_quadratic_2.png"></p>
+<p>In the above graph we have added ReLU(x - 1). The idea behind this was that the slope at x = 1 is 2 and we want to ensure that the curve does not</p>
+<p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/approx_quadratic_3.png"></p>
+<p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/approx_quadratic_4.png"></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://iamsecretlyflash.github.io/">Vaibhav Seth</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
