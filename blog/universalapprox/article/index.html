@@ -7,8 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>What exactly is universal approximation about? | Vaibhav Seth</title>
 <meta name="keywords" content="">
-<meta name="description" content="If you have read of neural networks, there&rsquo;s some chance you must have heard of the universal approximation theorem. The key principle that
-makes these machines so powerful.
+<meta name="description" content="If you have read of neural networks, there&rsquo;s some chance you must have heard of the universal approximation theorem. The key principle that makes these machines so powerful.
 Universal Approximation Theorem
 
 The Universal Approximation Theorem states that a feedforward neural network with a single hidden layer containing a finite number of neurons can approximate any continuous function on a compact subset of \(\mathbb{R}^n\), provided the activation function is non-constant, bounded, and continuous.
@@ -92,8 +91,7 @@ Universal Approximation Theorem The Universal Approximation Theorem states that 
     <meta property="article:modified_time" content="2025-01-19T18:13:33+05:30">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="What exactly is universal approximation about?">
-<meta name="twitter:description" content="If you have read of neural networks, there&rsquo;s some chance you must have heard of the universal approximation theorem. The key principle that
-makes these machines so powerful.
+<meta name="twitter:description" content="If you have read of neural networks, there&rsquo;s some chance you must have heard of the universal approximation theorem. The key principle that makes these machines so powerful.
 Universal Approximation Theorem
 
 The Universal Approximation Theorem states that a feedforward neural network with a single hidden layer containing a finite number of neurons can approximate any continuous function on a compact subset of \(\mathbb{R}^n\), provided the activation function is non-constant, bounded, and continuous.
@@ -130,8 +128,8 @@ The Universal Approximation Theorem states that a feedforward neural network wit
   "keywords": [
     
   ],
-  "articleBody": "If you have read of neural networks, there’s some chance you must have heard of the universal approximation theorem. The key principle that makes these machines so powerful.\nUniversal Approximation Theorem The Universal Approximation Theorem states that a feedforward neural network with a single hidden layer containing a finite number of neurons can approximate any continuous function on a compact subset of \\(\\mathbb{R}^n\\), provided the activation function is non-constant, bounded, and continuous. Formally: Let \\(K \\subset \\mathbb{R}\\) be a compact set and \\( f: K \\to \\mathbb{R} \\) be a continuous function. For any \\( \\epsilon \u003e 0 \\), there exists a feedforward neural network \\( g(x) \\) of the form: $$ g(x) = \\sum_{i=1}^m c_i * a(w_i^\\top x + b_i), $$ where:\n- \\( a: \\mathbb{R} \\to \\mathbb{R} \\) is the activation function, - \\( m \\) is the number of neurons in the hidden layer, - \\( c_i \\in \\mathbb{R} \\), \\( w_i \\in \\mathbb{R} \\), and \\( b_i \\in \\mathbb{R} \\) are parameters of the network, such that: $$ \\sup_{x \\in K} |f(x) - g(x)| \u003c \\epsilon. $$\nThis demonstrates that the network \\( g(x) \\) can approximate \\( f(x) \\) to arbitrary precision, given sufficient neurons in the hidden layer. Uhhhhh WHAT? To understand what the above theorem means, we will consider a simple neural network with a simple activation and assume that we are trying to approximate a one dimensional function.\nBut before anything, we will get some definitions sorted first. 1. Approximation function Let's call the function to be approximated as \\( f(x) : \\mathbb{R} \\to \\mathbb{R} \\) and the approximating function as \\( \\hat{f}(x) : \\mathbb{R} \\to \\mathbb{R} \\) 2. Activation Function Basically any non-linear function that transforms the input. Some most common ones are with there graphs are:\n- Rectified Linear Unit (ReLU) : \\( max(x, 0) \\) - Sigmoid : \\( \\frac{1}{1 + \\exp(-x)} \\) 3. Neural Network Basically a summation of functions over and over again.\nThe neural network described in the image works as follows:\nTakes a single input x and sends it to the three nodes.\nEach of those node first map this input to a diffent space using a linear function of the form a*x + b\nAt each node a non-linear activation function is applied to the mapped input and passed to the next layer.\nIn the above diagram the next layer just takes a summation of the outputs of all the three nodes and that is the output of the neural network. When relevant parameters are learnt , that is the approximated function\nA slightly more complicated neural network is described below\nIn this network the hidden units are again perform the same steps as above but this time the linear function has two input parameters. We can extend this format for any dimension of input\nTo sort of complete things here is another type of a neural network\nWhat you see above is a multiple layer network. You can think of this recursively, the outputs from the first layer (f_i) become the inputs to the second layer. This recursive definition can be used to define any neural network of aribtrary depth.\nYou might have heard multiple layer neural networks performing excpetionally powerfully but in theory we can approximate any function using just a single hidden layer.\n4. Piecewise Linear Functions The final piece that we will require in this demo is the concept of piecewise linear function. Let’s look at some graphs to understand them\nThe above function is a basic ReLU function. As you can see, in the two regions where it’s differentiable the function is linear. This is called piecewise linearity.\nThis one has three linear regions.\nThis one has 4 linear regions. All the graphs have been made by summing different ReLU functions. So you can see that adding ReLU basically gives a piecewise linear function.\nWith these basic definitions, let’s look at the universal approximation theorem.\nUniversal Approximation - A Visualisation In this visualisation of the theorem, we will be approximating a very basic quadratic function (just x squared) using a single hidden layer neural network and the activation we will be using here will be ReLU. We will be varying the number of hidden units and will look at the results of the approximation. The learning of the weights will be performed using the backpropagation algorithm and the visualisation will be done using matplotlib.\nIf N is the number of hidden units the form of the approximation by a single hidden layer network can be written as:\n$$ \\hat{f}(x) = \\sum_{i=1}^N c_i * ReLU(a_i * x + b_i) $$\nWhere \\(a_i, b_i\\) and \\(c_i\\) are constants that will be learnt by the backpropagation algorithm by minimising a certain loss function. We will not be going into backpropgation algorithm in this blog so we will just assume that the weights returned by backprop are optimal.\nSumming ReLUs The first thing we will try here is to show how summing up ReLUs can potentially approximate a quadratic curve.\nIn the above figure we have plotted \\(y = x^2\\) and \\(ReLU(x)\\). As you can observe the approximation is pretty terrible here and there are just two points where our approximation functions hits the quadratic curve. However, this serves as a good starting point for us to get into how we can approximate functions using universal approximation theorem. Next, we will add one more ReLU function and we will do it a little smartly. We will add it in such a way that the resulting piecewise continuous function comes closer to the right side of the quadratic curve.\nIn the above graph we have added ReLU(x - 1). The idea behind this was that the slope at x = 1 is 2 and we want to ensure that the curve does not\n",
-  "wordCount" : "969",
+  "articleBody": "If you have read of neural networks, there’s some chance you must have heard of the universal approximation theorem. The key principle that makes these machines so powerful.\nUniversal Approximation Theorem The Universal Approximation Theorem states that a feedforward neural network with a single hidden layer containing a finite number of neurons can approximate any continuous function on a compact subset of \\(\\mathbb{R}^n\\), provided the activation function is non-constant, bounded, and continuous. Formally: Let \\(K \\subset \\mathbb{R}\\) be a compact set and \\( f: K \\to \\mathbb{R} \\) be a continuous function. For any \\( \\epsilon \u003e 0 \\), there exists a feedforward neural network \\( g(x) \\) of the form: $$ g(x) = \\sum_{i=1}^m c_i * a(w_i^\\top x + b_i), $$ where:\n- \\( a: \\mathbb{R} \\to \\mathbb{R} \\) is the activation function, - \\( m \\) is the number of neurons in the hidden layer, - \\( c_i \\in \\mathbb{R} \\), \\( w_i \\in \\mathbb{R} \\), and \\( b_i \\in \\mathbb{R} \\) are parameters of the network, such that: $$ \\sup_{x \\in K} |f(x) - g(x)| \u003c \\epsilon. $$\nThis demonstrates that the network \\( g(x) \\) can approximate \\( f(x) \\) to arbitrary precision, given sufficient neurons in the hidden layer. Uhhhhh WHAT? To understand what the above theorem means, we will consider a simple neural network with a simple activation and assume that we are trying to approximate a one-dimensional function.\nBut before anything, we will get some definitions sorted first. 1. Approximation function Let's call the function to be approximated as \\( f(x) : \\mathbb{R} \\to \\mathbb{R} \\) and the approximating function as \\( \\hat{f}(x) : \\mathbb{R} \\to \\mathbb{R} \\) 2. Activation Function Basically, any non-linear function that transforms the input. Some most common ones with their graphs are:\n- Rectified Linear Unit (ReLU) : \\( \\max(x, 0) \\) - Sigmoid : \\( \\frac{1}{1 + \\exp(-x)} \\) 3. Neural Network Basically a summation of functions over and over again.\nThe neural network described in the image works as follows:\nTakes a single input (x) and sends it to the three nodes. Each of those nodes first maps this input to a different space using a linear function of the form (a*x + b). At each node, a non-linear activation function is applied to the mapped input and passed to the next layer. In the above diagram, the next layer just takes a summation of the outputs of all the three nodes, and that is the output of the neural network. When relevant parameters are learned, that is the approximated function. A slightly more complicated neural network is described below:\nIn this network, the hidden units again perform the same steps as above, but this time the linear function has two input parameters. We can extend this format for any dimension of input.\nTo sort of complete things, here is another type of neural network:\nWhat you see above is a multiple-layer network. You can think of this recursively: the outputs from the first layer ((f_i)) become the inputs to the second layer. This recursive definition can be used to define any neural network of arbitrary depth.\nYou might have heard of multiple-layer neural networks performing exceptionally powerfully, but in theory, we can approximate any function using just a single hidden layer.\n4. Piecewise Linear Functions The final piece that we will require in this demo is the concept of a piecewise linear function. Let’s look at some graphs to understand them:\nThe above function is a basic ReLU function. As you can see, in the two regions where it’s differentiable, the function is linear. This is called piecewise linearity.\nThis one has three linear regions.\nThis one has four linear regions. All the graphs have been made by summing different ReLU functions. So you can see that adding ReLU basically gives a piecewise linear function.\nWith these basic definitions, let’s look at the universal approximation theorem.\nUniversal Approximation - A Visualization In this visualization of the theorem, we will be approximating a very basic quadratic function (just (x^2)) using a single hidden layer neural network, and the activation we will be using here will be ReLU. We will vary the number of hidden units and look at the results of the approximation. The learning of the weights will be performed using the backpropagation algorithm, and the visualization will be done using matplotlib.\nIf \\(N\\) is the number of hidden units, the form of the approximation by a single hidden layer network can be written as: $$ \\hat{f}(x) = \\sum_{i=1}^N c_i * ReLU(a_i * x + b_i) $$ Where \\(a_i, b_i\\), and \\(c_i\\) are constants that will be learned by the backpropagation algorithm by minimizing a certain loss function. We will not go into the backpropagation algorithm in this blog, so we will just assume that the weights returned by backprop are optimal.\nSumming ReLUs The first thing we will try here is to show how summing up ReLUs can potentially approximate a quadratic curve.\nIn the above figure, we have plotted \\(y = x^2\\) and \\(ReLU(x)\\). As you can observe, the approximation is pretty terrible here, and there are just two points where our approximation function hits the quadratic curve. However, this serves as a good starting point for us to understand how we can approximate functions using the universal approximation theorem. Next, we will add one more ReLU function, and we will do it a little smartly. We will add it in such a way that the resulting piecewise continuous function comes closer to the right side of the quadratic curve. In the above graph, we have added (ReLU(x - 1)). The idea behind this was that the slope at (x = 1) is 2, and we want to ensure that the curve aligns better.\n",
+  "wordCount" : "961",
   "inLanguage": "en",
   "datePublished": "2025-01-19T18:13:33+05:30",
   "dateModified": "2025-01-19T18:13:33+05:30",
@@ -216,8 +214,7 @@ The Universal Approximation Theorem states that a feedforward neural network wit
 
 </div>
   </header> 
-  <div class="post-content"><p>If you have read of neural networks, there&rsquo;s some chance you must have heard of the universal approximation theorem. The key principle that
-makes these machines so powerful.</p>
+  <div class="post-content"><p>If you have read of neural networks, there&rsquo;s some chance you must have heard of the universal approximation theorem. The key principle that makes these machines so powerful.</p>
 <h3 id="universal-approximation-theorem">Universal Approximation Theorem<a hidden class="anchor" aria-hidden="true" href="#universal-approximation-theorem">#</a></h3>
 <p>
 The Universal Approximation Theorem states that a feedforward neural network with a single hidden layer containing a finite number of neurons can approximate any continuous function on a compact subset of \(\mathbb{R}^n\), provided the activation function is non-constant, bounded, and continuous.
@@ -247,16 +244,16 @@ $$</p>
 This demonstrates that the network \( g(x) \) can approximate \( f(x) \) to arbitrary precision, given sufficient neurons in the hidden layer.
 </p>
 <h2 id="uhhhhh-what">Uhhhhh WHAT?<a hidden class="anchor" aria-hidden="true" href="#uhhhhh-what">#</a></h2>
-<p>To understand what the above theorem means, we will consider a simple neural network with a simple activation and assume that we are trying to approximate a one dimensional function.</p>
+<p>To understand what the above theorem means, we will consider a simple neural network with a simple activation and assume that we are trying to approximate a one-dimensional function.</p>
 <h3 id="but-before-anything-we-will-get-some-definitions-sorted-first">But before anything, we will get some definitions sorted first.<a hidden class="anchor" aria-hidden="true" href="#but-before-anything-we-will-get-some-definitions-sorted-first">#</a></h3>
 <h3 id="1-approximation-function">1. Approximation function<a hidden class="anchor" aria-hidden="true" href="#1-approximation-function">#</a></h3>
 <p>
 Let's call the function to be approximated as \( f(x) : \mathbb{R} \to \mathbb{R} \) and the approximating function as \( \hat{f}(x) : \mathbb{R} \to \mathbb{R} \)
 </p>
 <h3 id="2-activation-function">2. Activation Function<a hidden class="anchor" aria-hidden="true" href="#2-activation-function">#</a></h3>
-<p>Basically any non-linear function that transforms the input. Some most common ones are with there graphs are:</p>
+<p>Basically, any non-linear function that transforms the input. Some most common ones with their graphs are:</p>
 <p>
-- Rectified Linear Unit (ReLU) : \( max(x, 0) \)
+- Rectified Linear Unit (ReLU) : \( \max(x, 0) \)
 </p>
 <p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/relu.png"></p>
 <p>
@@ -268,62 +265,48 @@ Let's call the function to be approximated as \( f(x) : \mathbb{R} \to \mathbb{R
 <p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/basic_nn.png"></p>
 <p>The neural network described in the image works as follows:</p>
 <ul>
-<li>
-<p>Takes a single input x and sends it to the three nodes.</p>
-</li>
-<li>
-<p>Each of those node first map this input to a diffent space using a linear function of the form a*x + b</p>
-</li>
-<li>
-<p>At each node a non-linear activation function is applied to the mapped input and passed to the next layer.</p>
-</li>
-<li>
-<p>In the above diagram the next layer just takes a summation of the outputs of all the three nodes and that is the output of the neural network. When relevant parameters are learnt
-, that is the approximated function</p>
-</li>
+<li>Takes a single input (x) and sends it to the three nodes.</li>
+<li>Each of those nodes first maps this input to a different space using a linear function of the form (a*x + b).</li>
+<li>At each node, a non-linear activation function is applied to the mapped input and passed to the next layer.</li>
+<li>In the above diagram, the next layer just takes a summation of the outputs of all the three nodes, and that is the output of the neural network. When relevant parameters are learned, that is the approximated function.</li>
 </ul>
-<p>A slightly more complicated neural network is described below</p>
+<p>A slightly more complicated neural network is described below:</p>
 <p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/multivariate_nn.png"></p>
-<p>In this network the hidden units are again perform the same steps as above but this time the linear function has two input parameters. We can extend
-this format for any dimension of input</p>
-<p>To sort of complete things here is another type of a neural network</p>
+<p>In this network, the hidden units again perform the same steps as above, but this time the linear function has two input parameters. We can extend this format for any dimension of input.</p>
+<p>To sort of complete things, here is another type of neural network:</p>
 <p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/multi_layer_nn.png"></p>
-<p>What you see above is a multiple layer network. You can think of this recursively, the outputs from the first layer (f_i) become the inputs to the second layer. This recursive definition can be used to define any
-neural network of aribtrary depth.</p>
-<p>You might have heard multiple layer neural networks performing excpetionally powerfully but in theory we can approximate any function using just a single hidden layer.</p>
+<p>What you see above is a multiple-layer network. You can think of this recursively: the outputs from the first layer ((f_i)) become the inputs to the second layer. This recursive definition can be used to define any neural network of arbitrary depth.</p>
+<p>You might have heard of multiple-layer neural networks performing exceptionally powerfully, but in theory, we can approximate any function using just a single hidden layer.</p>
 <h3 id="4-piecewise-linear-functions">4. Piecewise Linear Functions<a hidden class="anchor" aria-hidden="true" href="#4-piecewise-linear-functions">#</a></h3>
-<p>The final piece that we will require in this demo is the concept of piecewise linear function. Let&rsquo;s look at some graphs to understand them</p>
+<p>The final piece that we will require in this demo is the concept of a piecewise linear function. Let&rsquo;s look at some graphs to understand them:</p>
 <p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/piecewise_1.png"></p>
-<p>The above function is a basic ReLU function. As you can see, in the two regions where it&rsquo;s differentiable the function is linear. This is called piecewise linearity.</p>
+<p>The above function is a basic ReLU function. As you can see, in the two regions where it&rsquo;s differentiable, the function is linear. This is called piecewise linearity.</p>
 <p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/piecewise_2.png"></p>
 <p>This one has three linear regions.</p>
 <p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/piecewise_3.png"></p>
-<p>This one has 4 linear regions. All the graphs have been made by summing different ReLU functions. So you can see that adding ReLU basically gives a piecewise linear function.</p>
+<p>This one has four linear regions. All the graphs have been made by summing different ReLU functions. So you can see that adding ReLU basically gives a piecewise linear function.</p>
 <p>With these basic definitions, let&rsquo;s look at the universal approximation theorem.</p>
-<h2 id="universal-approximation---a-visualisation">Universal Approximation - A Visualisation<a hidden class="anchor" aria-hidden="true" href="#universal-approximation---a-visualisation">#</a></h2>
-<p>In this visualisation of the theorem, we will be approximating a very basic quadratic function (just x squared) using a single hidden layer neural network and the activation we will be using
-here will be ReLU. We will be varying the number of hidden units and will look at the results of the approximation. The learning of the weights will
-be performed using the backpropagation algorithm and the visualisation will be done using matplotlib.</p>
-<p>If N is the number of hidden units the form of the approximation by a single hidden layer network can be written as:</p>
-<p>$$
-\hat{f}(x) = \sum_{i=1}^N c_i * ReLU(a_i * x + b_i)
-$$</p>
+<h2 id="universal-approximation---a-visualization">Universal Approximation - A Visualization<a hidden class="anchor" aria-hidden="true" href="#universal-approximation---a-visualization">#</a></h2>
+<p>In this visualization of the theorem, we will be approximating a very basic quadratic function (just (x^2)) using a single hidden layer neural network, and the activation we will be using here will be ReLU. We will vary the number of hidden units and look at the results of the approximation. The learning of the weights will be performed using the backpropagation algorithm, and the visualization will be done using matplotlib.</p>
 <p>
-Where \(a_i, b_i\) and \(c_i\) are constants that will be learnt by the backpropagation algorithm by minimising a certain loss function.
+If \(N\) is the number of hidden units, the form of the approximation by a single hidden layer network can be written as:
 </p>
-<p>We will not be going into backpropgation algorithm in this blog so we will just assume that the weights returned by backprop are optimal.</p>
+$$
+\hat{f}(x) = \sum_{i=1}^N c_i * ReLU(a_i * x + b_i)
+$$
+<p>
+Where \(a_i, b_i\), and \(c_i\) are constants that will be learned by the backpropagation algorithm by minimizing a certain loss function.
+</p>
+<p>We will not go into the backpropagation algorithm in this blog, so we will just assume that the weights returned by backprop are optimal.</p>
 <h3 id="summing-relus">Summing ReLUs<a hidden class="anchor" aria-hidden="true" href="#summing-relus">#</a></h3>
 <p>The first thing we will try here is to show how summing up ReLUs can potentially approximate a quadratic curve.</p>
 <p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/approx_quadratic_1.png"></p>
 <p>
-In the above figure we have plotted \(y = x^2\) and \(ReLU(x)\). As  you can observe the approximation is pretty terrible here and there are just two
-points where our approximation functions hits the quadratic curve. However, this serves as a good starting point for us to get into how we can approximate
-functions using universal approximation theorem.
-<p>Next, we will add one more ReLU function and we will do it a little smartly. We will add it in such a way
-that the resulting piecewise continuous function comes closer to the right side of the quadratic curve.</p>
+In the above figure, we have plotted \(y = x^2\) and \(ReLU(x)\). As you can observe, the approximation is pretty terrible here, and there are just two points where our approximation function hits the quadratic curve. However, this serves as a good starting point for us to understand how we can approximate functions using the universal approximation theorem.
 </p>
+Next, we will add one more ReLU function, and we will do it a little smartly. We will add it in such a way that the resulting piecewise continuous function comes closer to the right side of the quadratic curve.
 <p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/approx_quadratic_2.png"></p>
-<p>In the above graph we have added ReLU(x - 1). The idea behind this was that the slope at x = 1 is 2 and we want to ensure that the curve does not</p>
+<p>In the above graph, we have added (ReLU(x - 1)). The idea behind this was that the slope at (x = 1) is 2, and we want to ensure that the curve aligns better.</p>
 <p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/approx_quadratic_3.png"></p>
 <p><img alt="alt text" loading="lazy" src="/images/blog/universalapprox/approx_quadratic_4.png"></p>
 

@@ -13,8 +13,7 @@
       <link>https://iamsecretlyflash.github.io/blog/universalapprox/article/</link>
       <pubDate>Sun, 19 Jan 2025 18:13:33 +0530</pubDate>
       <guid>https://iamsecretlyflash.github.io/blog/universalapprox/article/</guid>
-      <description>&lt;p&gt;If you have read of neural networks, there&amp;rsquo;s some chance you must have heard of the universal approximation theorem. The key principle that
-makes these machines so powerful.&lt;/p&gt;
+      <description>&lt;p&gt;If you have read of neural networks, there&amp;rsquo;s some chance you must have heard of the universal approximation theorem. The key principle that makes these machines so powerful.&lt;/p&gt;
 &lt;h3 id=&#34;universal-approximation-theorem&#34;&gt;Universal Approximation Theorem&lt;/h3&gt;
 &lt;p&gt;
 The Universal Approximation Theorem states that a feedforward neural network with a single hidden layer containing a finite number of neurons can approximate any continuous function on a compact subset of \(\mathbb{R}^n\), provided the activation function is non-constant, bounded, and continuous.
@@ -26,11 +25,11 @@ The Universal Approximation Theorem states that a feedforward neural network wit
       <pubDate>Sat, 18 Jan 2025 18:13:33 +0530</pubDate>
       <guid>https://iamsecretlyflash.github.io/blog/guide/</guid>
       <description>&lt;h2 id=&#34;just-why&#34;&gt;Just Why?&lt;/h2&gt;
-&lt;p&gt;The first thing that needs to be addressed is why I decided to make this website. Why did I spend the whole of 19th January 2025 figuring out how to host this goddamn webpage?&lt;/p&gt;
-&lt;p&gt;The reason is threefold:&lt;/p&gt;
+&lt;p&gt;The first thing that needs to be addressed is why I decided to make this website. Why did I spend the entirety of 19th January 2025 figuring out how to host this goddamn webpage?&lt;/p&gt;
+&lt;p&gt;The reasons are threefold:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;I have lately realized I love to yap, have tons of thoughts, and would love a place to pen (type) them down (hence the blog).&lt;/li&gt;
-&lt;li&gt;I have always been somewhat obsessed with the idea of having a domain name for myself. I splurged a bit today and hence had to add content to the page with my name—what better than random thoughts?&lt;/li&gt;
+&lt;li&gt;I have always been somewhat obsessed with the idea of having a domain name for myself. I splurged a bit today and therefore had to add content to the page with my name—what better than random thoughts?&lt;/li&gt;
 &lt;li&gt;I have to thank Aniruddha Deb for the idea of hosting a blog page using Hugo. I have always enjoyed reading his blogs and was inspired by him to create something similar.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You will see that the theme of this page is inspired by &lt;a href=&#34;https://www.aniruddhadeb.com&#34;&gt;Aniruddha&amp;rsquo;s page&lt;/a&gt; because I found Hugo through his blog and used some style elements from his GitHub repository.&lt;/p&gt;</description>
