@@ -6,19 +6,8 @@
     <description>Recent content in Blog on Vaibhav Seth</description>
     <generator>Hugo -- 0.141.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Feb 2025 02:39:55 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jan 2025 18:13:33 +0530</lastBuildDate>
     <atom:link href="https://iamsecretlyflash.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>What exactly is universal approximation about?</title>
-      <link>https://iamsecretlyflash.github.io/blog/universalapprox/article/</link>
-      <pubDate>Fri, 07 Feb 2025 02:39:55 +0530</pubDate>
-      <guid>https://iamsecretlyflash.github.io/blog/universalapprox/article/</guid>
-      <description>&lt;p&gt;If you have read of neural networks, there&amp;rsquo;s some chance you must have heard of the universal approximation theorem. The key principle that makes these machines so powerful.&lt;/p&gt;
-&lt;h3 id=&#34;universal-approximation-theorem&#34;&gt;Universal Approximation Theorem&lt;/h3&gt;
-&lt;p&gt;
-The Universal Approximation Theorem states that a feedforward neural network with a single hidden layer containing a finite number of neurons can approximate any continuous function on a compact subset of \(\mathbb{R}^n\), provided the activation function is non-constant, bounded, and continuous.
-&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Setting up a webpage like this</title>
       <link>https://iamsecretlyflash.github.io/blog/guide/</link>
